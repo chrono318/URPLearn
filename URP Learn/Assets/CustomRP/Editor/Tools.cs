@@ -31,6 +31,7 @@ public class Tools
             PerObjectMaterialProperty comp = child.AddComponent<PerObjectMaterialProperty>();
             
             comp.baseColor = colors[Random.Range(0, colors.Count)];
+            comp.SetColor();
         }
     }
 }
