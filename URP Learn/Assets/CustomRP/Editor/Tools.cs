@@ -26,7 +26,7 @@ public class Tools
             GameObject child = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             child.transform.parent = root;
             child.transform.localPosition = new Vector3 (i%8, i/8, 0f);
-            Material material = new Material(Shader.Find("Custom RP/Unlit"));
+            Material material = new Material(Shader.Find("Custom RP/Lit"));
             child.GetComponent<MeshRenderer>().material = material;
             PerObjectMaterialProperty comp = child.AddComponent<PerObjectMaterialProperty>();
             
