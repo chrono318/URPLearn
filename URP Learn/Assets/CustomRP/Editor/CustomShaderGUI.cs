@@ -42,6 +42,24 @@ public class CustomShaderGUI : ShaderGUI
             }
         }
     }
+
+    enum ShadowMode
+    {
+        On, Clipped, Dithered, Off
+    }
+
+    ShadowMode Shadows
+    {
+        set
+        {
+            if(SetProperty("_Shadows", (float)value))
+            {
+                SetKeyword("_SHADOWS_CLIP", value == ShadowMode.Clipped);
+                SetKeyword("_SHADOWS_DITHER", value == ShadowMode.Dithered);
+            }
+        }
+    }
+
     #endregion
 
     MaterialEditor editor;
@@ -51,6 +69,7 @@ public class CustomShaderGUI : ShaderGUI
     bool showPresets;
     public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
     {
+        EditorGUI.BeginChangeCheck();
         base.OnGUI(materialEditor, properties);
         editor = materialEditor;
         materials = editor.targets;
@@ -64,6 +83,10 @@ public class CustomShaderGUI : ShaderGUI
             ClipPreset();
             FadePreset();
             TransparentPreset();
+        }
+        if (EditorGUI.EndChangeCheck())
+        {
+            SetShadowCasterPass();
         }
     }
 
@@ -115,6 +138,20 @@ public class CustomShaderGUI : ShaderGUI
     bool HasProperty(string name) => FindProperty(name, properties, false) != null;
 
     bool HasPremultiplyAlpha => HasProperty("_PremultiplyAlpha");
+
+    void SetShadowCasterPass()
+    {
+        MaterialProperty shadows = FindProperty("_Shadows", properties, false);
+        if(shadows == null || shadows.hasMixedValue)
+        {
+            return;
+        }
+        bool enabled = shadows.floatValue < (float)ShadowMode.Off;
+        foreach(Material material in materials)
+        {
+            material.SetShaderPassEnabled("ShadowCaster", enabled);
+        }
+    }
 
     #region Presets
     void OpaquePreset()
