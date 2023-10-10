@@ -23,12 +23,17 @@ Varyings MetaPassVertex(Attributes input)
 {
 	Varyings output;
 	input.positionOS.xy = input.lightMapUV * unity_LightmapST.xy + unity_LightmapST.zw;
+	input.positionOS.z = input.positionOS.z > 0.0 ? FLT_MIN : 0.0;
 	output.positionCS = TransformWorldToHClip(input.positionOS);
 
 	output.baseUV = TransformBaseUV(input.baseUV);
 	return output;
 }
 
+bool unity_MetaFragmentControl;
+
+float unity_OneOverOutputBoost;
+float unity_MaxOutputValue;
 
 float4 MetaPassFragment(Varyings input) : SV_TARGET
 {
@@ -43,6 +48,18 @@ float4 MetaPassFragment(Varyings input) : SV_TARGET
 	BRDF brdf = GetBRDF(surface);
 
 	float4 meta = 0.0;
+	if(unity_MetaFragmentControl.x)
+	{
+		meta = float4(brdf.diffuse, 1.0);
+		meta.rgb += brdf.specular * brdf.roughness * 0.5;
+		meta.rgb = min(
+			PositivePow(meta.rgb, unity_OneOverOutputBoost), unity_MaxOutputValue
+		);
+	}
+	else if(unity_MetaFragmentControl.x)
+	{
+		meta = float4(GetEmission(input.baseUV), 1.0);
+	}
 
 	return meta;
 }
