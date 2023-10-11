@@ -16,6 +16,9 @@ Shader "Custom RP/Lit"
         [NoScaleOffset]_EmissionMap("Emission", 2D) = "white"{}
         [HDR]_EmissionColor("Emission", Color) = (0.0, 0.0, 0.0, 0.0)
         [Toggle(_PREMULTIPLY_ALPHA)]_PremultiplyAlpha("Premultiply Alpha", Float) = 0
+
+        [HideInInspector] _MainTex("Texture for Lgihtmap", 2D) = "white" {}
+        [HideInInspector] _Color("Color for Lightmap", Color) = (0.5, 0.5, 0.5, 1.0)
     }
     SubShader
     {

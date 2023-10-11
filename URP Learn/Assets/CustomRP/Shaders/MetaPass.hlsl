@@ -30,7 +30,7 @@ Varyings MetaPassVertex(Attributes input)
 	return output;
 }
 
-bool unity_MetaFragmentControl;
+bool4 unity_MetaFragmentControl;
 
 float unity_OneOverOutputBoost;
 float unity_MaxOutputValue;
@@ -56,7 +56,7 @@ float4 MetaPassFragment(Varyings input) : SV_TARGET
 			PositivePow(meta.rgb, unity_OneOverOutputBoost), unity_MaxOutputValue
 		);
 	}
-	else if(unity_MetaFragmentControl.x)
+	else if(unity_MetaFragmentControl.y)
 	{
 		meta = float4(GetEmission(input.baseUV), 1.0);
 	}

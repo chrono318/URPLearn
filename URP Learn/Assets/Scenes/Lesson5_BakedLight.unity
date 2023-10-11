@@ -789,6 +789,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297605126}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &384762756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 384762758}
+  - component: {fileID: 384762757}
+  - component: {fileID: 384762759}
+  m_Layer: 0
+  m_Name: InstancingBall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &384762757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384762756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039d97db95bfab9488dd5382f46019d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: 26eb43b9917b1734bb822f4f3116d3ce, type: 2}
+  lightProbeProxyVolume: {fileID: 384762759}
+--- !u!4 &384762758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384762756}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!259 &384762759
+LightProbeProxyVolume:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384762756}
+  m_Enabled: 1
+  m_BoundingBoxMode: 2
+  m_ResolutionX: 2
+  m_ResolutionY: 2
+  m_ResolutionZ: 2
+  m_ResolutionProbesPerUnit: 0.5
+  m_BoundingBoxSize: {x: 20, y: 20, z: 20}
+  m_BoundingBoxOrigin: {x: 0, y: 0, z: 0}
+  m_ResolutionMode: 0
+  m_ProbePositionMode: 0
+  m_RefreshMode: 0
+  m_QualityMode: 1
+  m_DataFormat: 1
 --- !u!1 &387759509
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,8 +1065,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429872509}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18810166, y: -0.6064981, z: 0.15053082, w: 0.757706}
-  m_LocalPosition: {x: 8.867667, y: 2.9881053, z: -1.0886636}
+  m_LocalRotation: {x: -0.23555225, y: 0.552126, z: -0.16682361, w: -0.78220326}
+  m_LocalPosition: {x: 10.004215, y: 4.0899563, z: -1.7963903}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1365,7 +1433,7 @@ Transform:
   m_GameObject: {fileID: 552961254}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.18, y: 0.79, z: -1.62}
+  m_LocalPosition: {x: 4.39, y: 0.79, z: 0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1493,7 +1561,7 @@ MonoBehaviour:
   cutoff: 0
   metallic: 0
   smoothness: 0.5
-  emissionColor: {r: 170.89003, g: 154.78522, b: 0, a: 1}
+  emissionColor: {r: 5.9921575, g: 5.4274516, b: 0, a: 1}
 --- !u!65 &634428023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2395,7 +2463,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1225897994
 Transform:
@@ -3102,7 +3170,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 98385cea030291b44b105210a2066e50, type: 2}
+  - {fileID: 2100000, guid: 26eb43b9917b1734bb822f4f3116d3ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3147,7 +3215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1402147739
 Transform:
   m_ObjectHideFlags: 0
@@ -4924,7 +4992,7 @@ MonoBehaviour:
   cutoff: 0
   metallic: 0
   smoothness: 0.5
-  emissionColor: {r: 64, g: 64, b: 64, a: 1}
+  emissionColor: {r: 5.9921565, g: 5.9921565, b: 5.9921565, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4938,3 +5006,4 @@ SceneRoots:
   - {fileID: 1402147739}
   - {fileID: 1637242772}
   - {fileID: 1649247192}
+  - {fileID: 384762758}
