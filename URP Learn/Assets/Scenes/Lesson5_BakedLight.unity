@@ -806,7 +806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &384762757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,8 +1065,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429872509}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.23555225, y: 0.552126, z: -0.16682361, w: -0.78220326}
-  m_LocalPosition: {x: 10.004215, y: 4.0899563, z: -1.7963903}
+  m_LocalRotation: {x: 0.1926856, y: -0.7628587, z: 0.26441196, w: 0.5576785}
+  m_LocalPosition: {x: 11.254363, y: 4.877043, z: 4.3018365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1929,13 +1929,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 7e-45, z: 3.634e-42, w: 1.3796274e-37}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3170,7 +3170,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 26eb43b9917b1734bb822f4f3116d3ce, type: 2}
+  - {fileID: 2100000, guid: 98385cea030291b44b105210a2066e50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
