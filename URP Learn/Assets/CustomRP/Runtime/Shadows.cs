@@ -82,15 +82,13 @@ public class Shadows
     {
         if(ShadowedDirectionalLightCount < maxShadowedDirectionalLightCount
             && light.shadows != LightShadows.None
-            && light.shadowStrength > 0f
-            )
+            && light.shadowStrength > 0f)
         {
             float maskChannel = -1;
             LightBakingOutput lightBaking = light.bakingOutput;
-            if(
-                lightBaking.lightmapBakeType == LightmapBakeType.Mixed &&
-                lightBaking.mixedLightingMode == MixedLightingMode.Shadowmask
-            ){
+            if(lightBaking.lightmapBakeType == LightmapBakeType.Mixed &&
+                lightBaking.mixedLightingMode == MixedLightingMode.Shadowmask)
+            {
                 useShadowMask = true;
                 maskChannel = lightBaking.occlusionMaskChannel;
             }
